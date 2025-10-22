@@ -1,0 +1,15 @@
+# ...existing code...
+name: tmp-py312
+channels:
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+    - pandas
+    - python-dotenv
+    - streamlit
+    - boto3
+    - ipykernel
+    - vaderSentiment
+    - plotly
