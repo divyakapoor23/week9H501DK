@@ -41,6 +41,7 @@ def test_unknown_groups_prints_warning(capsys=None):
     assert "Warning" in out
 
 if __name__ == "__main__":
+    """Run tests when executed as a script. """
     for fn in (test_mean_basic, test_median_basic, test_unknown_groups_prints_warning):
         try:
             fn()
