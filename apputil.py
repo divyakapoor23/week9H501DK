@@ -93,3 +93,24 @@ class GroupEstimate:
     def get_group_estimates(self):
         return self.group_estimates_
 # ...existing code...
+if __name__ == "__main__":
+    # Example from the notebook — prints a numpy array and its type
+    X = pd.DataFrame({
+        "loc_country": ["Guatemala", "Mexico"],
+        "roast": ["Light", "Medium"]
+    })
+    y = [88.4, 91.0]
+
+    gm = GroupEstimate(estimate="mean").fit(X, y)
+
+    X_ = [
+        ["Guatemala", "Light"],
+        ["Mexico", "Medium"],
+        ["Canada", "Dark"]
+    ]
+
+    pred = gm.predict(X_)
+    print(pred)           # numpy array output
+    print(type(pred))     # confirm it's numpy.ndarray
+    # optional: show which entries are NaN
+    print(np.isnan(pred).tolist())
